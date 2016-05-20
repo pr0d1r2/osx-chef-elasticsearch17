@@ -23,15 +23,12 @@ end
   end
 end
 
-[ "#{home_dir}/Library/LaunchAgents",
-  PARENT_DATA_DIR,
-  DATA_DIR ].each do |dir|
+[ "#{home_dir}/Library/LaunchAgents" ].each do |dir|
   directory dir do
     owner user_name
     action :create
   end
 end
-
 
 package "homebrew/versions/elasticsearch17" do
   action [:install, :upgrade]
